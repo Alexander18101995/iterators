@@ -5,7 +5,10 @@ nested_list = [
 ]
 
 def flat_generator(a: list):
-    return [x for sublist in a for x in sublist]
-
+  for sublist in a:
+    for item in sublist:
+      yield item
+  
 for item in  flat_generator(nested_list):
     print(item)
+
